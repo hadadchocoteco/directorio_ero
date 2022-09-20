@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CuentaRangos extends Model
+class TipoCambio extends Model
 {
     use HasFactory;
 
-    protected $table = 'cuenta_rangos';
+    protected $table = 'tipo_cambios';
     protected $fillable = [
-        'rango',
-        'cantidadVisitas',
-        'porcentajeExperienciaPositiva',
+        'conversion',
         'activo',
     ];
 }

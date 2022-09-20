@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstadosTable extends Migration
+class CreateCuentaServiciosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateEstadosTable extends Migration
      */
     public function up()
     {
-        Schema::create('estados', function (Blueprint $table) {
+        Schema::create('cuenta_servicios', function (Blueprint $table) {
             $table->id();
-            $table->char('estado', 30)->nullable();
-            $table->char('codigo', 8)->nullable();
-            $table->boolean('activo', 8)->default(false);
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateEstadosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estados');
+        Schema::dropIfExists('cuenta_servicios');
     }
 }

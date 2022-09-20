@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMunicipiosTable extends Migration
+class CreatePerfilVerificacionEstatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateMunicipiosTable extends Migration
      */
     public function up()
     {
-        Schema::create('municipios', function (Blueprint $table) {
+        Schema::create('perfil_verificacion_estatus', function (Blueprint $table) {
             $table->id();
-            $table->char('municipio', 30)->nullable();
-            $table->char('codigo', 8)->nullable();
-            $table->boolean('activo', 8)->default(false);
+            $table->char('perfilEstatus', 30)->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateMunicipiosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('municipios');
+        Schema::dropIfExists('perfil_verificacion_estatus');
     }
 }

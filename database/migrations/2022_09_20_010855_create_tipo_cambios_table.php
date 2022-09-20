@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaisTable extends Migration
+class CreateTipoCambiosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePaisTable extends Migration
      */
     public function up()
     {
-        Schema::create('paises', function (Blueprint $table) {
+        Schema::create('tipo_cambios', function (Blueprint $table) {
             $table->id();
-            $table->char('pais', 30)->nullable();
-            $table->char('codigo', 8)->nullable();
+            $table->decimal('conversion', 12, 3)->default(0);
             $table->boolean('activo')->default(false);
             $table->timestamps();
         });
@@ -29,6 +28,6 @@ class CreatePaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paises');
+        Schema::dropIfExists('tipo_cambios');
     }
 }

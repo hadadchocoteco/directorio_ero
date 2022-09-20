@@ -22,7 +22,12 @@ class CuentaSeeder extends Seeder
             'sexo' => 'hombre',
             'rol' => 'heterosexual',
             'fechaNacimiento' => '1990-03-01',
-            'codigoMunicipio' => '',
+            'idMunicipio' => '14',
+            'idEstado' => '2',
+            'idPais' => '1',
+            'activo' => true,
+            'administrador' => true,
+            'fechaHoraRegistro' => date('Y-m-d H:i:s'),
         ]);
     }
 }

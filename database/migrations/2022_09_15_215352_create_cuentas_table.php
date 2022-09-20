@@ -24,9 +24,9 @@ class CreateCuentasTable extends Migration
             $table->date('fechaNacimiento')->nullable();
             $table->char('direccion', 250)->nullable();
             $table->char('localidad', 80)->nullable();
-            $table->integer('codigoMunicipio')->nullable();
-            $table->tinyInteger('codigoEstado')->nullable();
-            $table->tinyInteger('codigoPais')->nullable();
+            $table->integer('idMunicipio')->nullable();
+            $table->tinyInteger('idEstado')->nullable();
+            $table->tinyInteger('idPais')->nullable();
             $table->char('correo', 80)->nullable();
             $table->char('telefono', 15)->nullable();
             $table->char('token', 150)->nullable();

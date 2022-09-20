@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\TipoCambio;
 use Illuminate\Database\Seeder;
 
-class PaisSeeder extends Seeder
+class TipoCambioSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,9 @@ class PaisSeeder extends Seeder
      */
     public function run()
     {
-        //
+        TipoCambio::create([
+            'conversion' => 19.7,
+            'activo' => true
+        ]);
     }
 }

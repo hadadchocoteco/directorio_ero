@@ -16,6 +16,7 @@ class CreateCuentaRangosTable extends Migration
         Schema::create('cuenta_rangos', function (Blueprint $table) {
             $table->id();
             $table->char('rango', 30)->nullable();
+            $table->integer('cantidadVisitas')->default(0);
             $table->decimal('porcentajeExperienciaPositiva', 12, 3)->default(0);
             $table->boolean('activo')->default(false);
             $table->timestamps();

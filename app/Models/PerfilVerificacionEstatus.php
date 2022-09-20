@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CuentaRangos extends Model
+class PerfilVerificacionEstatus extends Model
 {
     use HasFactory;
 
-    protected $table = 'cuenta_rangos';
+    protected $table = 'perfil_verificacion_estatus';
     protected $fillable = [
-        'rango',
-        'cantidadVisitas',
-        'porcentajeExperienciaPositiva',
-        'activo',
+        'perfilEstatus', /* enviado, recibido, revisando, verificado, rechazado */
     ];
 }

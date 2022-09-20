@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CuentaRangos;
 use Illuminate\Database\Seeder;
 
 class CuentaRangosSeeder extends Seeder
@@ -13,6 +14,21 @@ class CuentaRangosSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $rangos = array(
+            [
+                'rango' => 'inicial',
+                'cantidadVisitas' => 100,
+                'activo' => true,
+            ],
+            [
+                'rango' => 'top',
+                'cantidadVisitas' => 500,
+                'activo' => true,
+            ],
+        );
+
+        foreach ($rangos as $rango) {
+            CuentaRangos::create($rango);
+        }
     }
 }

@@ -13,6 +13,7 @@ class Modulo extends Model
     protected $fillable = [
         'modulo',
         'rutaModulo',
+        'grupoModulo',
         'activo',
     ];
 }

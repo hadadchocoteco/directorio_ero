@@ -16,7 +16,8 @@ class CreateModulosTable extends Migration
         Schema::create('modulos', function (Blueprint $table) {
             $table->id();
             $table->char('modulo', 30)->nullable();
-            $table->char('rutaModulo', 60)->default(0);
+            $table->char('rutaModulo', 60)->nullable();
+            $table->char('grupoModulo', 30)->nullable();
             $table->boolean('activo')->default(false);
             $table->timestamps();
         });

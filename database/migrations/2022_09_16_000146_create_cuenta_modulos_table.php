@@ -22,7 +22,7 @@ class CreateCuentaModulosTable extends Migration
             $table->boolean('actualizar')->default(false);
             $table->boolean('inhabilitar')->default(false);
             $table->boolean('eliminar')->default(false);
-            $table->boolean('activar')->default(false);
+            $table->boolean('activo')->default(false);
             $table->timestamps();
         });
     }

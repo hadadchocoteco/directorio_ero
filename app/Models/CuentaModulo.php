@@ -18,6 +18,6 @@ class CuentaModulo extends Model
         'actualizar',
         'inhabilitar',
         'eliminar',
-        'activar',
+        'activo',
     ];
 }
