@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePerfilVerificacionEstatusesTable extends Migration
+class AnuncioVerificacionEstatus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreatePerfilVerificacionEstatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('perfil_verificacion_estatus', function (Blueprint $table) {
+        Schema::create('anuncio_verificacion_estatus', function (Blueprint $table) {
             $table->id();
-            $table->char('perfilEstatus', 30)->nullable();
+            $table->char('anuncioEstatus', 30)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreatePerfilVerificacionEstatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perfil_verificacion_estatus');
+        Schema::dropIfExists('anuncio_verificacion_estatus');
     }
 }

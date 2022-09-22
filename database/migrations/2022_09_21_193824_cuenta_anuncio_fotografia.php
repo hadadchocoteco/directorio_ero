@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCuentaPerfilFotografiasTable extends Migration
+class CuentaAnuncioFotografia extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCuentaPerfilFotografiasTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuenta_perfil_fotografias', function (Blueprint $table) {
+        Schema::create('cuenta_anuncio_fotografias', function (Blueprint $table) {
             $table->id();
             $table->integer('idAnuncio')->nullable();
             $table->integer('idUsuarioCliente')->nullable();
@@ -32,6 +32,6 @@ class CreateCuentaPerfilFotografiasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cuenta_perfil_fotografias');
+        Schema::dropIfExists('cuenta_anuncio_fotografias');
     }
 }

@@ -31,10 +31,10 @@ class CreateCuentasTable extends Migration
             $table->char('telefono', 15)->nullable();
             $table->char('token', 150)->nullable();
             $table->char('codigo', 10)->nullable();
-            $table->integer('cantidadPerfilesPermitidos')->default(0);
+            $table->integer('cantidadAnunciosPermitidos')->default(0);
             $table->integer('cantidadExperienciasPermitidos')->default(0);
-            $table->integer('publicacionesDisponibles')->default(0);
-            $table->integer('publicacionesGratisDisponibles')->default(0);
+            $table->integer('anunciosDisponibles')->default(0);
+            $table->integer('anunciosGratisDisponibles')->default(0);
             $table->decimal('cantidadUltimaRecarga', 12, 3)->default(0);
             $table->decimal('cantidadTotalRecarga', 12, 3)->default(0);
             $table->dateTime('fechaHoraRecarga')->nullable();

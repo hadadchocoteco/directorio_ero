@@ -17,8 +17,10 @@ class DatabaseSeeder extends Seeder
             TipoCambioSeeder::class,
             CuentaSeeder::class,
             ModuloSeeder::class,
+            ServiciosSeeder::class,
             CuentaModuloSeeder::class,
             CuentaRangosSeeder::class,
+            TipoCuentaSeeder::class,
         ]);
     }
 }

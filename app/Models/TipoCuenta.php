@@ -12,9 +12,9 @@ class TipoCuenta extends Model
     protected $table = 'tipo_cuentas';
     protected $fillable = [
         'tipo',
-        'costoPerfil',
+        'costoAnuncio',
         'costoExperiencia',
-        'creditoPagoPerfil',
+        'creditoPagoAnuncio',
         'creditoPagoExperiencia',
         'descuento',
         'activo',

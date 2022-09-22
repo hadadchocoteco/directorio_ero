@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CuentaPerfilFotografia extends Model
+class CuentaAnuncioFotografia extends Model
 {
     use HasFactory;
 
-    protected $table = 'cuenta_perfil_experiencias';
+    protected $table = 'cuenta_anuncio_experiencias';
     protected $fillable = [
         'idPefil',
-        'rutaPerfilFotografia',
+        'rutaAnuncioFotografia',
         'activo',
         'fechaHoraSubida',
         'fechaHoraInhabilitada',

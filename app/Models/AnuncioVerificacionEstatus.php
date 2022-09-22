@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PerfilVerificacionEstatus extends Model
+class AnuncioVerificacionEstatus extends Model
 {
     use HasFactory;
 
-    protected $table = 'perfil_verificacion_estatus';
+    protected $table = 'anuncio_verificacion_estatus';
     protected $fillable = [
-        'perfilEstatus', /* enviado, recibido, revisando, verificado, rechazado */
+        'anuncioEstatus', /* enviado, recibido, revisando, verificado, rechazado */
     ];
 }

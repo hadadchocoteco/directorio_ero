@@ -130,8 +130,57 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'correo' => [
+            'email' => 'Ingrese un correo válido.',
+            'required' => 'El correo es requerido.',
+        ],
+        'contrasena' => [
+            'required' => [
+                'min' => 'Ingrese una contraseña con más de :min caracteres',
+            ],
+        ],
+        'nombre' => [
+            'required' => 'Ingrese un nombre.',
+        ],
+        'apellido' => [
+            'required' => 'Ingrese un apellido.',
+        ],
+        'sexo' => [
+            'required' => 'Ingrese su sexo.',
+        ],
+        'telefono' => [
+            'required' => [
+                'numeric' => 'Ingrese un número válido',
+                'digits' => 'El teléfono debe tener :digits dígitos',
+            ]
+        ],
+        'rol' => [
+            'required' => 'Ingrese su rol.',
+        ],
+        'fechaNacimiento' => [
+            'required' => [
+                'date' => 'Ingrese una fecha válida.',
+            ]
+        ],
+        'token' => [
+            'required' => 'Token no válido'
+        ],
+        'codigo' => [
+            'required' => [
+                'numeric' => 'Ingrese un código válido',
+            ]
+        ],
+        'idTipoCuenta' => [
+            'required' => 'Seleccione un tipo de cuenta.',
+        ],
+        'idPais' => [
+            'required' => 'Seleccione un país.',
+        ],
+        'idEstado' => [
+            'required' => 'Seleccione un estado.',
+        ],
+        'idMunicipio' => [
+            'required' => 'Seleccione un municipio.',
         ],
     ],
 

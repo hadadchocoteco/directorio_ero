@@ -22,8 +22,8 @@ class ModuloSeeder extends Seeder
                 'activo' => true,
             ],
             [
-                'modulo' => 'perfiles',
-                'rutaModulo' => 'perfiles',
+                'modulo' => 'anuncioes',
+                'rutaModulo' => 'anuncioes',
                 'grupoModulo' => 'administracion',
                 'activo' => true,
             ],

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCuentaPerfilExperienciasTable extends Migration
+class CuentaAnuncioExperiencia extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateCuentaPerfilExperienciasTable extends Migration
      */
     public function up()
     {
-        Schema::create('cuenta_perfil_experiencias', function (Blueprint $table) {
+        Schema::create('cuenta_anuncio_experiencias', function (Blueprint $table) {
             $table->id();
             $table->integer('idAnuncio')->nullable();
             $table->integer('idUsuarioCliente')->nullable();
@@ -32,6 +32,6 @@ class CreateCuentaPerfilExperienciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cuenta_perfil_experiencias');
+        Schema::dropIfExists('cuenta_anuncio_experiencias');
     }
 }
