@@ -14,23 +14,40 @@ use Illuminate\Validation\ValidationException;
 class RegistroController extends Controller
 {
     public function index(){
-        $estados = Estado::all();
         $tipoCuentas = TipoCuenta::all();
     }
 
     public function guardar(Request $request){
         try {
-            $request->validate([
-                'contrasena' => 'required|min:8',
-                'nombre' => 'required',
-                'apellido' => 'required',
-                'sexo' => 'required',
-                'fechaNacimiento' => 'required|date',
-                'idEstado' => 'required',
-                'idMunicipio' => 'required',
-                'correo' => 'required|email',
-                'idTipoCuenta' => 'required',
-            ]);
+            $request->validate(
+                [
+                    'correo' => 'required|email',
+                    'contrasena' => 'required|min:8',
+                    'nombre' => 'required',
+                    'apellido' => 'required',
+                    'sexo' => 'required',
+                    'fechaNacimiento' => 'required|date',
+                    'idPais' => 'required',
+                    'idEstado' => 'required',
+                    'idMunicipio' => 'required',
+                    'idTipoCuenta' => 'required',
+                ],
+                [
+                    'correo.required' => 'Ingrese un correo electrónico',
+                    'correo.email' => 'Ingrese un correo electrónico válido',
+                    'contrasena.required' => 'Ingrese una contraseña',
+                    'contrasena.min' => 'La contraseña debe tener mínimo 8 caracteres',
+                    'nombre.required' => 'Ingrese su nombre',
+                    'apellido.required' => 'Ingrese su apellido',
+                    'sexo.required' => 'Ingrese su sexo',
+                    'fechaNacimiento.required' => 'Ingrese su fecha de nacimiento',
+                    'fechaNacimiento.date' => 'Ingrese una fecha válida',
+                    'idPais.required' => 'Ingrese su país',
+                    'idEstado.required' => 'Ingrese su estado',
+                    'idMunicipio.required' => 'Ingrese su municipio',
+                    'idTipoCuenta.required' => 'Seleccione un tipo de cuenta',
+                ],
+            );
 
             if(!Cuenta::where('usuario', $request->correo)->exists()){
                 Cuenta::create([
@@ -48,15 +65,15 @@ class RegistroController extends Controller
                     'fechaHoraRegistro' => date('Y-m-d H:i:s'),
                     'idTipoCuenta' => $request->idTipoCuenta,
                 ]);
+
+                return redirect(route('inicioSesion'))->with('exito','Cuenta creada exitosamente. Se te ha enviado un correo para su activación.');
             }else{
-                return redirect()->with('error','Este correo ya está registrado.');
+                return back()->with('error','Este correo ya está registrado.');
             }
-        } catch (\Throwable $th) {
-            //throw $th;
         } catch (ValidationException $ve) {
-            //throw $th;
-        } catch (ModelNotFoundException $mnfe) {
-            //throw $th;
+            return back()->withErrors($ve->validator);
+        } catch (\Exception $mnfe) {
+            return back()->with('error','Error en la petición.');
         }
     }
 }

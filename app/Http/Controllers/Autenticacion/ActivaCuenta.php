@@ -19,9 +19,14 @@ class ActivaCuenta extends Controller
     public function __invoke(Request $request)
     {
         try{
-            $request->validate([
-                'token' => 'required'
-            ]);
+            $request->validate(
+                [
+                    'token' => 'required'
+                ],
+                [
+                    'token.required' => 'Enlace inválido.',
+                ]
+            );
 
             $cuenta = Cuenta::where('token', $request->token)->firstOrFail();
 
@@ -33,16 +38,14 @@ class ActivaCuenta extends Controller
                 $cuenta->activo = true;
                 $cuenta->save();
 
-                return redirect()->with('exito','Cuenta activada exitosamente.');
+                return redirect(route('inicioSesion'))->with('exito','Cuenta activada exitosamente.');
             }else{
-                return redirect()->with('error','La cuenta ya se encontraba activada.');
+                return redirect(route('inicioSesion'))->with('error','La cuenta ya se encontraba activada.');
             }
-        } catch (\Throwable $th) {
-            return redirect()->with('error','Error en la petición.');
         } catch (ValidationException $ve) {
-            return redirect()->with('error','La cuenta ya se encontraba activada.');
+            return back()->withErrors($ve->validator);
         } catch (ModelNotFoundException $mnfe) {
-            return redirect()->with('error','La cuenta no existe.');
+            return redirect(route('inicioSesion'))->with('error','Token inválido.');
         }
     }
 }

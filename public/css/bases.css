@@ -1,0 +1,43 @@
+:root{
+    --eroNegro1: #353535;
+    --eroRojo1: #990042;
+    --eroRosa1: #AD4A61;
+    --eroMorado1: #E245BF;
+    --eroMorado2: #7F0063;
+}
+
+.fondo-negro-1{
+    background-color: var(--eroNegro1);
+}
+
+.fondo-rojo-1{
+    background-color: var(--eroRojo1);
+}
+
+.fondo-rosa-1{
+    background-color: var(--eroRosa1);
+}
+
+.fondo-morado-1{
+    background-color: var(--eroMorado1);
+}
+
+.fondo-morado-2{
+    background-color: var(--eroMorado2);
+}
+
+.borde-1{
+    border-radius: 6px;
+}
+
+.borde-2{
+    border-radius: 10px;
+}
+
+.borde-radio-3{
+    border-radius: 15px;
+}
+
+.borde-radio-4{
+    border-radius: 23px !important;
+}

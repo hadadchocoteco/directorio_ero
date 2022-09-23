@@ -12,15 +12,23 @@ use Illuminate\Validation\ValidationException;
 class AutenticarController extends Controller
 {
     public function inicioSesion(){
-
+        return view('autenticacion.inicioSesion');
     }
 
     public function autenticar(Request $request){
         try {
-            $request->validate([
-                'contrasena' => 'required|min:8',
-                'usuario' => 'required',
-            ]);
+            $request->validate(
+                [
+                    'correo' => 'required|email',
+                    'contrasena' => 'required|min:8',
+                ],
+                [
+                    'correo.required' => 'Ingrese un correo electrónico',
+                    'correo.email' => 'Ingrese un correo electrónico válido',
+                    'contrasena.required' => 'Ingrese una contraseña',
+                    'contrasena.min' => 'La contraseña debe tener mínimo 8 caracteres',
+                ],
+            );
 
             $cuenta = Cuenta::where('usuario', $request->usuario)->firstOrFail();
 
@@ -37,12 +45,10 @@ class AutenticarController extends Controller
                 'ERO_NOMBRE' => $cuenta->nombre,
                 'ERO_APELLIDO' => $cuenta->apellido,
             ]);
-        } catch (\Throwable $th) {
-            //throw $th;
-        } catch (ValidationException $th) {
-            //throw $th;
+        } catch (ValidationException $ve) {
+            return back()->withErrors($ve->validator);
         } catch (ModelNotFoundException $mnfe) {
-            //throw $th;
+            return back()->with('error','La cuenta no existe.');
         }
     }
 }

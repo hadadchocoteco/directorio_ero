@@ -1,0 +1,29 @@
+a,b,p,div,span,label,h1,h2,h3,h4,h5,h6,ol,ul,li,small,bold,i{
+    /* font-family: 'Rajdhani Medium'; */
+}
+
+a{
+    text-decoration: none;
+    text-decoration-style: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+a:hover{
+    color: inherit;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.card-hover{
+    transition: .4s;
+}
+
+.card-hover:hover{
+    transition: .4s;
+    box-shadow: 4px 4px 8px #DADADA;
+}

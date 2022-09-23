@@ -45,7 +45,7 @@ class CuentaAnuncio extends Migration
             $table->boolean('anuncioVerificado')->default(false);
             $table->string('anuncioFotografiaVerificacion', 300)->nullable();
             $table->string('anuncioVerificadoExplicacion', 500)->nullable();
-            $table->tinyInteger('idAnuncioEstatus')->nullable();
+            $table->tinyInteger('idAnuncioVerificacionEstatus')->nullable();
             $table->string('fotografiaAnuncio', 300)->nullable();
             $table->integer('vecesAnuncioEditado')->nullable();
             $table->dateTime('fechaHoraAnuncioEditado')->nullable();

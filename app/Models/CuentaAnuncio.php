@@ -41,7 +41,7 @@ class CuentaAnuncio extends Model
         'anuncioVerificado',
         'anuncioFotografiaVerificacion',
         'anuncioVerificadoExplicacion',
-        'idAnuncioEstatus',
+        'idAnuncioVerificacionEstatus',
         'fotografiaAnuncio',
         'vecesAnuncioEditado',
         'fechaHoraAnuncioEditado',
