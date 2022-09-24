@@ -7,3 +7,8 @@
     font-family: 'Rajdhani Medium';
     src: url('../fuentes/Rajdhani-Medium.ttf');
 }
+
+@font-face {
+    font-family: 'Gill Sans';
+    src: url('../fuentes/Gill Sans Medium.otf');
+}

@@ -28,7 +28,7 @@
     @include('plantillas.cabecera')
     @include('plantillas.modales')
     @include('plantillas.avisos')
-    <div>
+    <div class="pt-4 pb-4 container">
         @yield('contenido')
     </div>
     @include('plantillas.pie')
